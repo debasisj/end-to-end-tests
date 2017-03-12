@@ -11,5 +11,13 @@
   "dependencies": {
     "protractor": "^5.1.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/debasisj/end-to-end-tests.git"
+  },
+  "bugs": {
+    "url": "https://github.com/debasisj/end-to-end-tests/issues"
+  },
+  "homepage": "https://github.com/debasisj/end-to-end-tests#readme"
 }

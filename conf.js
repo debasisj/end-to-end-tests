@@ -4,12 +4,20 @@
 exports.config={
     framework: 'jasmine',
     seleniumAddress: 'http://localhost:4444/wd/hub',
+    //sauceUser:'debasisjagadev',
+    //sauceKey:'c68d4548-a1a1-42cb-a2f1-a68eb27ba',
     suites:{
-    basictest:'spec.js',
-    othertest:'otherspec.js'
+    //basictest:'spec.js',
+    //othertest:'otherspec.js',
+        pagetest:'WithPageObjects.js'
     },
-    //specs: ['spec.js'],
+
     capabilities: {
-        browserName: 'firefox'
+        browserName: 'chrome'
     }
+    //,
+    //{
+      //  browserName: 'chrome'
+    //}
+
 };
