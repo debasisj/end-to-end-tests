@@ -1,0 +1,15 @@
+{
+  "name": "end-to-end_tests",
+  "version": "1.0.0",
+  "description": "Generic Protractor tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "deb jagadev",
+  "license": "ISC",
+  "dependencies": {
+    "protractor": "^5.1.1"
+  },
+  "devDependencies": {}
+}
