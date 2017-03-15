@@ -11,7 +11,9 @@
   "dependencies": {
     "protractor": "^5.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "protractor-jasmine2-screenshot-reporter": "^0.3.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/debasisj/end-to-end-tests.git"

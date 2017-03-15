@@ -1,15 +1,18 @@
+var page = require('./pages/testangular.page.js');
 describe('This is a test',function () {
+    var testAngPage = new page();
     beforeEach(function(){
-        browser.get("https://angularjs.org/");
+        browser.get(browser.params.baseURL);
 
     });
     it('Title test',function () {
        expect(browser.getTitle()).toEqual('AngularJS — Superheroic JavaScript MVW Framework');
     });
     it('Second test',function () {
-        element(by.model('yourName')).sendKeys('Deb');
+        //element(by.model('yourName')).sendKeys('Deb');
+        testAngPage.name.sendKeys('Deb');
         var span2 = element(by.binding('yourName'));
-        expect(span2.getText()).toEqual('Hello Deb!');
+        expect(testAngPage.span.getText()).toEqual('Hello Deb!');
 
     });
     it('Enter A Task and Validate',function () {
