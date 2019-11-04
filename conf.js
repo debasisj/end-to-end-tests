@@ -24,9 +24,10 @@ exports.config={
     //sauceUser:'debasisjagadev',
     //sauceKey:'c68d4548-a1a1-42cb-a2f1-a68eb27ba837',
     suites:{
-        basictest:'testsangular.spec.js',
-        othertest:'otherspec.js',
-        pagetest:'WithPageObjects.js'
+        cafetownsendTests:'cafetownsend.spec.js'
+        // basictest:'testsangular.spec.js',
+        // othertest:'otherspec.js',
+        // pagetest:'WithPageObjects.js'
     },
 
     capabilities: {

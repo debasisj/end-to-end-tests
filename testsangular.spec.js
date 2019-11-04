@@ -20,6 +20,7 @@ describe('This is a test',function () {
             element(by.css('[value="add"]')).click();
             var getTheAddedTaskList = element.all(by.repeater('todo in todoList.todos'));
             var newTask = getTheAddedTaskList.get(2);
+            var emp = newTask.
             expect(newTask.getText()).toEqual('This is Deb third test');
         }
         
