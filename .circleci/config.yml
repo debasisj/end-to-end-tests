@@ -44,4 +44,4 @@ jobs:
         command:
           protractor conf.js
     - store_test_results:
-          path: target/
+          path: target
