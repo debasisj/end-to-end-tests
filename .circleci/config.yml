@@ -8,9 +8,17 @@ jobs:
   build:  
     working_directory: ~/end-to-end-tests
     docker:
-            - image: circleci/node:10-browsers
+            - image: circleci/node:jessie-browsers
     steps:
     - checkout
+    - run: mkdir test-reports
+    - run:
+        name: Download Selenium
+        command: curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
+    - run:
+        name: Start Selenium
+        command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
+        background: true
     - run:
         name: install
         command: npm install
@@ -27,12 +35,10 @@ jobs:
         name: set up
         command: |
           sudo npm i -g protractor
-          sudo webdriver-manager update
+          #sudo webdriver-manager update
           #sudo webdriver-manager start
         
-    - run:
-        command: NODE_ENV=development node server/server.js
-        background: true
+  
     - run:
         name: run e2e test
         command:
