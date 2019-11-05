@@ -28,9 +28,11 @@ jobs:
         command: |
           sudo npm i -g protractor
           sudo webdriver-manager update
-          sudo webdriver-manager start
+          #sudo webdriver-manager start
           background: true
-
+    - run:
+        command: NODE_ENV=development node server/server.js
+        background: true
     - run:
         name: run e2e test
         command:
