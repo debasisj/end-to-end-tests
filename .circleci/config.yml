@@ -24,11 +24,15 @@ jobs:
         background: true
     
     - run:
-        name: Run e2e tests
+        name: set up
         command: |
           sudo npm i -g protractor
           sudo webdriver-manager update
           sudo webdriver-manager start
+
+    - run:
+        name: run e2e test
+        command:
           protractor conf.js
     # - store_test_results:
     #       path: /tmp/test-results/
