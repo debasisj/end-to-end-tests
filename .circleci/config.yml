@@ -28,7 +28,7 @@ jobs:
         command: |
           sudo npm i -g protractor
           sudo webdriver-manager update
-          sudo webdriver-manager start
+          # sudo webdriver-manager start
 
     - run:
         name: run e2e test
