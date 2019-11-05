@@ -39,7 +39,7 @@ exports.config={
         //name: 'basic tests'
     },
     onPrepare:function () {
-        browser.driver.manage().window().maximize();
+        //browser.driver.manage().window().maximize();
         jasmine.getEnv().addReporter(reporter);
     },
     afterLaunch: function(exitCode) {
