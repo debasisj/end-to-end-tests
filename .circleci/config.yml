@@ -48,4 +48,4 @@ jobs:
 
     - store_artifacts:
       path: target/test-report.html
-      destination: test_results
+     
