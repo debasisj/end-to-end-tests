@@ -5,7 +5,10 @@
 
 # working_directory: ~/RA
 jobs: 
-  build:  
+  test:  
+    working_directory: ~/end-to-end-tests
+    docker:
+            - image: circleci/node:10-browsers
     steps:
     - checkout
     - run:
