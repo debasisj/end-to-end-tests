@@ -45,3 +45,7 @@ jobs:
           protractor conf.js
     - store_test_results:
           path: target
+
+    - store_artifacts:
+      path: target/
+      destination: test_results
