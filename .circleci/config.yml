@@ -47,5 +47,5 @@ jobs:
             path: target
 
       - store_artifacts:
-        path: target
+            path: target
      
