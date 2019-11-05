@@ -3,44 +3,28 @@
   # documented at https://circleci.com/docs/2.0/circleci-images/
   # - image: circleci/mongo:3.4.4
 
-working_directory: ~/RA
-# dependencies:
-#   override:
-#     - npm install
-steps:
-  - checkout
-
-  # Download and cache dependencies
-  # - restore_cache:
-  #     keys:
-  #     - v1-dependencies-{{ checksum "package.json" }}
-  #     # fallback to using the latest cache if no exact match is found
-  #     - v1-dependencies-
-  - run:
-      name: install
-      command: npm install
-  - save_cache:
-      key: dependency-cache-{{ checksum "package.json" }}
-      paths:
-        - ./node_modules
-  - run:
-      name: start
-      command: npm run dev
-      background: true
-  # - test:
-  #     pre:
-  #       - npm start:
-  #           background: true
-  #       - sleep 5
-  #     override:
-  #       - npm test
-  #       - npm run protractor
-  
-  - run:
-      name: Run e2e tests
-      command: |
-        sudo npm i -g protractor
-        sudo webdriver-manager update
-        protractor conf.js
-  - store_test_results:
-        path: /tmp/test-results/
+# working_directory: ~/RA
+jobs: 
+  build:  
+    steps:
+    - checkout
+    - run:
+        name: install
+        command: npm install
+    - save_cache:
+        key: dependency-cache-{{ checksum "package.json" }}
+        paths:
+          - ./node_modules
+    - run:
+        name: start
+        command: npm run dev
+        background: true
+    
+    - run:
+        name: Run e2e tests
+        command: |
+          sudo npm i -g protractor
+          sudo webdriver-manager update
+          protractor conf.js
+    - store_test_results:
+          path: /tmp/test-results/
